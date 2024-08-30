@@ -1,0 +1,156 @@
+/* VARIABLES */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightPink: hsl(275, 100%, 97%);
+  --grayishPurple: hsl(292, 16%, 49%);
+  --darkPurple: hsl(292, 42%, 14%);
+  --pink: #ad28eb;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+li {
+  list-style-type: none;
+}
+
+/* BASE STYLES */
+body {
+  overflow-x: hidden;
+  font-family: "Work Sans", sans-serif;
+}
+a:hover {
+  color: var(--pink);
+}
+.show-or-hide-answer-icon:hover {
+  cursor: pointer;
+}
+
+/* FONTS */
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+h1,
+a {
+  color: var(--darkPurple);
+}
+a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+p {
+  font-size: 0.875rem;
+  color: var(--grayishPurple);
+}
+a,
+p {
+  line-height: 1.5;
+}
+
+/* MOBILE STYLES */
+.background-pattern {
+  width: 100%;
+  display: block;
+}
+.container {
+  padding: 2em 1em;
+  background-color: var(--lightPink);
+  border: 1px solid black;
+  width: 100%;
+  height: 170vh;
+  position: relative;
+}
+h1::before {
+  content: "";
+  display: inline-block;
+  background-image: url("./assets/images/icon-star.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 22px; /* Set desired width */
+  height: 22px; /* Set desired height */
+  margin-right: 0.25em;
+}
+.accordion {
+  background-color: var(--white);
+  padding: 1em;
+  border-radius: 10px;
+  position: absolute;
+  left: 1em;
+  right: 1em;
+  top: -7%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.accordion-item {
+  margin: 1em 0;
+  /* border: 1px solid black; */
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 1em; */
+  /* border: 1px solid red; */
+}
+.answer {
+  padding: 1em 0;
+  border-bottom: 1px solid gainsboro;
+}
+.hide-answer {
+  display: none;
+}
+.show-answer {
+  display: block;
+}
+
+/* 375px and more */
+@media (min-width: 375px) {
+  .container {
+    height: 150vh;
+  }
+}
+
+/* 425px and more */
+@media (min-width: 425px) {
+  .accordion {
+    left: 2em;
+    right: 2em;
+  }
+}
+
+/* 768px and more */
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+  }
+  .accordion {
+    left: 4em;
+    right: 4em;
+    top: -17%;
+  }
+  .background-pattern {
+    content: url("./assets/images/background-pattern-desktop.svg");
+  }
+}
+
+/* 1024px and more */
+@media (min-width: 1024px) {
+  .accordion {
+    left: 10em;
+    right: 10em;
+    top: -13%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .container {
+    height: 100vh;
+  }
+}
